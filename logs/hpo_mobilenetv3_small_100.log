@@ -1,0 +1,225 @@
+8.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.1s 3 0.00s - to python to disable frozen modules.
+8.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.7s 7 0.00s - to python to disable frozen modules.
+8.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+9.8s 9 Writing /kaggle/working/hpo.py
+16.6s 10 2 GPU(s), 2 data workers each
+61.7s 11 [gpu0] GPU: Tesla T4 | images: /kaggle/input/datasets/abdallahalidev/plantvillage-dataset | HPO: 11403 train / 10861 val
+63.7s 12 [gpu0] [I 2026-11-17 23:05:04,699] A new study created in RDB with name: mobilenetv3_small_100
+63.8s 13 [gpu0]
+63.8s 14 [gpu0] === Trial 0: {'lr': 0.001, 'weight_decay': 1e-06, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.0, 'schedule': 'constant'}
+64.1s 15 [gpu0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+89.5s 16 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+89.5s 17 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+114.6s 18 [gpu1] GPU: Tesla T4 | images: /kaggle/input/datasets/abdallahalidev/plantvillage-dataset | HPO: 11403 train / 10861 val
+115.1s 19 [gpu1] [I 2026-11-17 23:05:56,056] Using an existing study with `study_name='mobilenetv3_small_100'` instead of creating a new one.
+115.2s 20 [gpu1]
+115.2s 21 [gpu1] === Trial 1: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+115.4s 22 [gpu1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+125.1s 23 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+125.2s 24 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+774.4s 25 [gpu1] {"trial": 1, "epoch": 1, "train_loss": 0.6781263458176275, "val_loss": 0.1688205376260573, "val_acc": 0.9434674523524538, "val_macro_f1": 0.917131950368641, "epoch_time_s": 658.7090876102448}
+774.4s 26 [gpu0] {"trial": 0, "epoch": 1, "train_loss": 1.082696662357684, "val_loss": 1.3814115822836572, "val_acc": 0.633735383482184, "val_macro_f1": 0.5219109161736772, "epoch_time_s": 709.1578299999237}
+856.3s 27 [gpu0] {"trial": 0, "epoch": 2, "train_loss": 0.37219088947337664, "val_loss": 0.8581613671827241, "val_acc": 0.7745143172820182, "val_macro_f1": 0.69660207720252, "epoch_time_s": 81.8538167476654}
+857.0s 28 [gpu1] {"trial": 1, "epoch": 2, "train_loss": 0.14675165417740185, "val_loss": 0.11476202882759787, "val_acc": 0.9616057453273179, "val_macro_f1": 0.9472834682729072, "epoch_time_s": 82.56633281707764}
+938.4s 29 [gpu0] {"trial": 0, "epoch": 3, "train_loss": 0.2503492118309388, "val_loss": 0.3549397949788926, "val_acc": 0.8943927815118313, "val_macro_f1": 0.8518407447337605, "epoch_time_s": 82.11916995048523}
+939.8s 30 [gpu1] {"trial": 1, "epoch": 3, "train_loss": 0.10485353939277067, "val_loss": 0.15657629439570048, "val_acc": 0.9481631525642206, "val_macro_f1": 0.9332208921350024, "epoch_time_s": 82.85970401763916}
+1020.1s 31 [gpu0] {"trial": 0, "epoch": 4, "train_loss": 0.18994477143239105, "val_loss": 0.9828514702883602, "val_acc": 0.7351993370776172, "val_macro_f1": 0.719814783947139, "epoch_time_s": 81.73079419136047}
+1022.5s 32 [gpu1] {"trial": 1, "epoch": 4, "train_loss": 0.07990853019644704, "val_loss": 0.08232959496054067, "val_acc": 0.9726544517079458, "val_macro_f1": 0.9603327778312672, "epoch_time_s": 82.64952993392944}
+1101.8s 33 [gpu0] {"trial": 0, "epoch": 5, "train_loss": 0.20194849087281175, "val_loss": 0.5282222528579811, "val_acc": 0.861707025135807, "val_macro_f1": 0.8299467844013257, "epoch_time_s": 81.66463947296143}
+1102.0s 34 [gpu0] [I 2026-11-17 23:22:22,941] Trial 0 finished with value: 0.8518407447337605 and parameters: {'lr': 0.001, 'weight_decay': 1e-06, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 0 with value: 0.8518407447337605.
+1102.5s 35 [gpu0]
+1102.5s 36 [gpu0] === Trial 2: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1104.7s 37 [gpu1] {"trial": 1, "epoch": 5, "train_loss": 0.07320051071014297, "val_loss": 0.07782336359158218, "val_acc": 0.973391032133321, "val_macro_f1": 0.9550215531523798, "epoch_time_s": 82.15679430961609}
+1104.8s 38 [gpu1] [I 2026-11-17 23:22:25,779] Trial 1 finished with value: 0.9603327778312672 and parameters: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 1 with value: 0.9603327778312672.
+1105.2s 39 [gpu1]
+1105.2s 40 [gpu1] === Trial 3: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1105.7s 41 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+1105.7s 42 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+1112.3s 43 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+1112.3s 44 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+1187.4s 45 [gpu1] {"trial": 3, "epoch": 1, "train_loss": 3.360108774029807, "val_loss": 3.4815108760945783, "val_acc": 0.17558235889881227, "val_macro_f1": 0.07534525833235885, "epoch_time_s": 82.02333474159241}
+1191.5s 46 [gpu0] {"trial": 2, "epoch": 1, "train_loss": 0.6917230301337798, "val_loss": 0.20138012644168632, "val_acc": 0.9325108185249977, "val_macro_f1": 0.904320264136894, "epoch_time_s": 88.80088710784912}
+1270.6s 47 [gpu1] {"trial": 3, "epoch": 2, "train_loss": 2.169981351394332, "val_loss": 2.0773612040751614, "val_acc": 0.4604548384126692, "val_macro_f1": 0.2717189701488347, "epoch_time_s": 83.19044041633606}
+1271.5s 48 [gpu0] {"trial": 2, "epoch": 2, "train_loss": 0.15505053987203354, "val_loss": 0.12848449346638827, "val_acc": 0.9562655372433477, "val_macro_f1": 0.9455963657006132, "epoch_time_s": 79.97324633598328}
+1352.2s 49 [gpu0] {"trial": 2, "epoch": 3, "train_loss": 0.098527485033853, "val_loss": 0.11671676329886628, "val_acc": 0.9626185434122089, "val_macro_f1": 0.9392481015240474, "epoch_time_s": 80.7038643360138}
+1353.8s 50 [gpu1] {"trial": 3, "epoch": 3, "train_loss": 1.7265132823017206, "val_loss": 1.7077892661251073, "val_acc": 0.5412945400975969, "val_macro_f1": 0.3932974205423535, "epoch_time_s": 83.18505477905273}
+1432.8s 51 [gpu0] {"trial": 2, "epoch": 4, "train_loss": 0.08881818022830097, "val_loss": 0.07975044856790339, "val_acc": 0.9722861614952583, "val_macro_f1": 0.9620122066769164, "epoch_time_s": 80.5515124797821}
+1437.0s 52 [gpu1] {"trial": 3, "epoch": 4, "train_loss": 1.4159835295730763, "val_loss": 1.0566644366083198, "val_acc": 0.6727741460270693, "val_macro_f1": 0.5084161481798426, "epoch_time_s": 83.22285890579224}
+1512.9s 53 [gpu0] {"trial": 2, "epoch": 5, "train_loss": 0.0728225615189484, "val_loss": 0.07524843390075094, "val_acc": 0.9763373538348218, "val_macro_f1": 0.9628603117076263, "epoch_time_s": 80.0896954536438}
+1513.1s 54 [gpu0] [I 2026-11-17 23:29:14,035] Trial 2 finished with value: 0.9628603117076263 and parameters: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 2 with value: 0.9628603117076263.
+1513.6s 55 [gpu0]
+1513.6s 56 [gpu0] === Trial 4: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1514.3s 57 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+1514.3s 58 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+1520.7s 59 [gpu1] {"trial": 3, "epoch": 5, "train_loss": 1.2322031410222642, "val_loss": 1.2447859197704076, "val_acc": 0.6547279256053771, "val_macro_f1": 0.5189983342175554, "epoch_time_s": 83.60692763328552}
+1520.8s 60 [gpu1] [I 2026-11-17 23:29:21,799] Trial 3 finished with value: 0.5189983342175554 and parameters: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 2 with value: 0.9628603117076263.
+1521.3s 61 [gpu1]
+1521.3s 62 [gpu1] === Trial 5: {'lr': 7.52374288453485e-05, 'weight_decay': 6.789053271698483e-05, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+1532.8s 63 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+1532.8s 64 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+1592.0s 65 [gpu0] {"trial": 4, "epoch": 1, "train_loss": 3.722716620798861, "val_loss": 2.892924557534736, "val_acc": 0.21664671761347942, "val_macro_f1": 0.10624910356286658, "epoch_time_s": 78.1746666431427}
+1613.2s 66 [gpu1] {"trial": 5, "epoch": 1, "train_loss": 2.2277766198254705, "val_loss": 0.5637171761720244, "val_acc": 0.8694411196022466, "val_macro_f1": 0.795937761131838, "epoch_time_s": 91.62364292144775}
+1673.5s 67 [gpu0] {"trial": 4, "epoch": 2, "train_loss": 2.411341215452451, "val_loss": 2.0753430836372595, "val_acc": 0.3991345180001841, "val_macro_f1": 0.20821775275671492, "epoch_time_s": 81.42205548286438}
+1694.0s 68 [gpu1] {"trial": 5, "epoch": 2, "train_loss": 1.1732101865698783, "val_loss": 0.26446617827342145, "val_acc": 0.9526747076696437, "val_macro_f1": 0.9304841455600463, "epoch_time_s": 80.76770114898682}
+1754.2s 69 [gpu0] {"trial": 4, "epoch": 3, "train_loss": 1.9609195623504982, "val_loss": 4.699529067948207, "val_acc": 0.3866126507688058, "val_macro_f1": 0.22901999218850852, "epoch_time_s": 80.73832941055298}
+1775.4s 70 [gpu1] {"trial": 5, "epoch": 3, "train_loss": 1.0145160371667883, "val_loss": 0.20827828493250874, "val_acc": 0.9672221710708038, "val_macro_f1": 0.9513233694562262, "epoch_time_s": 81.4491913318634}
+1834.8s 71 [gpu0] {"trial": 4, "epoch": 4, "train_loss": 1.6276445574639888, "val_loss": 1.3064282194881651, "val_acc": 0.6091520117852868, "val_macro_f1": 0.44761032913349763, "epoch_time_s": 80.5184326171875}
+1857.0s 72 [gpu1] {"trial": 5, "epoch": 4, "train_loss": 0.9433873915270473, "val_loss": 0.18875486281528162, "val_acc": 0.9721940889420864, "val_macro_f1": 0.960247282403032, "epoch_time_s": 81.5290162563324}
+1915.5s 73 [gpu0] {"trial": 4, "epoch": 5, "train_loss": 1.3392833223503626, "val_loss": 1.246731532189675, "val_acc": 0.6140318571033975, "val_macro_f1": 0.47927072542353694, "epoch_time_s": 80.66242146492004}
+1915.6s 74 [gpu0] [I 2026-11-17 23:35:56,575] Trial 4 finished with value: 0.47927072542353694 and parameters: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 2 with value: 0.9628603117076263.
+1916.1s 75 [gpu0]
+1916.1s 76 [gpu0] === Trial 6: {'lr': 7.325461083904951e-05, 'weight_decay': 1.5180899024473892e-05, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1916.8s 77 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+1916.8s 78 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+1938.1s 79 [gpu1] {"trial": 5, "epoch": 5, "train_loss": 0.8978223335207178, "val_loss": 0.1623959674348753, "val_acc": 0.9784550225577755, "val_macro_f1": 0.9650056467007845, "epoch_time_s": 81.11690878868103}
+1938.3s 80 [gpu1] [I 2026-11-17 23:36:19,257] Trial 5 finished with value: 0.9650056467007845 and parameters: {'lr': 7.52374288453485e-05, 'weight_decay': 6.789053271698483e-05, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}. Best is trial 5 with value: 0.9650056467007845.
+1938.8s 81 [gpu1]
+1938.8s 82 [gpu1] === Trial 7: {'lr': 2.236338084499273e-05, 'weight_decay': 0.0003257296722275071, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+1939.7s 83 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+1939.7s 84 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+2000.8s 85 [gpu0] {"trial": 6, "epoch": 1, "train_loss": 0.8367857934823364, "val_loss": 0.2421579195911763, "val_acc": 0.9255133044839333, "val_macro_f1": 0.8910446178429862, "epoch_time_s": 84.46270298957825}
+2022.1s 86 [gpu1] {"trial": 7, "epoch": 1, "train_loss": 3.1479471479908803, "val_loss": 1.4810770835767584, "val_acc": 0.6347481815670749, "val_macro_f1": 0.42755026267321794, "epoch_time_s": 83.15601873397827}
+2085.2s 87 [gpu0] {"trial": 6, "epoch": 2, "train_loss": 0.15249797307331575, "val_loss": 0.1332455961406368, "val_acc": 0.9584752785194733, "val_macro_f1": 0.9429202737288277, "epoch_time_s": 84.38124442100525}
+2105.2s 88 [gpu1] {"trial": 7, "epoch": 2, "train_loss": 1.8272350336728471, "val_loss": 0.7901626401113966, "val_acc": 0.8194457232299052, "val_macro_f1": 0.6884184035225861, "epoch_time_s": 83.04369831085205}
+2105.2s 89 [gpu1] Trial 7 pruned
+2105.2s 90 [gpu1] [I 2026-11-17 23:39:06,181] Trial 7 pruned.
+2125.9s 91 [gpu1]
+2125.9s 92 [gpu1] === Trial 8: {'lr': 0.0005779513613369609, 'weight_decay': 0.06292942010319513, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+2126.8s 93 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2126.8s 94 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+2159.8s 95 [gpu0] {"trial": 6, "epoch": 3, "train_loss": 0.09472348383010439, "val_loss": 0.0760519234924046, "val_acc": 0.9751404106435871, "val_macro_f1": 0.9646769663070978, "epoch_time_s": 74.54864835739136}
+2209.3s 96 [gpu1] {"trial": 8, "epoch": 1, "train_loss": 2.126430603560437, "val_loss": 0.7584032631745798, "val_acc": 0.8312310100359083, "val_macro_f1": 0.7617958596004228, "epoch_time_s": 83.20210123062134}
+2243.7s 97 [gpu0] {"trial": 6, "epoch": 4, "train_loss": 0.07616564916091019, "val_loss": 0.0813638954048215, "val_acc": 0.9721020163889145, "val_macro_f1": 0.9608000292843194, "epoch_time_s": 83.96710467338562}
+2292.0s 98 [gpu1] {"trial": 8, "epoch": 2, "train_loss": 1.0397905064432809, "val_loss": 0.29587062447234175, "val_acc": 0.95055703894669, "val_macro_f1": 0.9371079696248076, "epoch_time_s": 82.59127235412598}
+2328.3s 99 [gpu0] {"trial": 6, "epoch": 5, "train_loss": 0.05134003241075558, "val_loss": 0.0999768364715945, "val_acc": 0.9694319123469294, "val_macro_f1": 0.9517996130976853, "epoch_time_s": 84.50033354759216}
+2328.5s 100 [gpu0] [I 2026-11-17 23:42:49,423] Trial 6 finished with value: 0.9646769663070978 and parameters: {'lr': 7.325461083904951e-05, 'weight_decay': 1.5180899024473892e-05, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 5 with value: 0.9650056467007845.
+2329.0s 101 [gpu0]
+2329.0s 102 [gpu0] === Trial 9: {'lr': 0.0003523218717535026, 'weight_decay': 6.405602458878477e-05, 'batch_size': 64, 'dropout': 0.0, 'label_smoothing': 0.1, 'schedule': 'constant'}
+2330.1s 103 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2330.1s 104 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+2372.7s 105 [gpu1] {"trial": 8, "epoch": 3, "train_loss": 0.8831940748718348, "val_loss": 0.16912539024377612, "val_acc": 0.9784550225577755, "val_macro_f1": 0.9704892701145149, "epoch_time_s": 80.74292278289795}
+2409.8s 106 [gpu0] {"trial": 9, "epoch": 1, "train_loss": 1.3283731622642345, "val_loss": 0.3398338674280637, "val_acc": 0.9400607678850934, "val_macro_f1": 0.9102967828773415, "epoch_time_s": 80.68301367759705}
+2453.4s 107 [gpu1] {"trial": 8, "epoch": 4, "train_loss": 0.8196407780888375, "val_loss": 0.11128482620159177, "val_acc": 0.9895037289384034, "val_macro_f1": 0.9851545533830098, "epoch_time_s": 80.70795726776123}
+2490.1s 108 [gpu0] {"trial": 9, "epoch": 2, "train_loss": 0.8371385004413262, "val_loss": 0.3524875311592031, "val_acc": 0.9399686953319215, "val_macro_f1": 0.9218810572496497, "epoch_time_s": 80.2614586353302}
+2490.2s 109 [gpu0] Trial 9 pruned
+2490.2s 110 [gpu0] [I 2026-11-17 23:45:31,128] Trial 9 pruned.
+2510.9s 111 [gpu0]
+2510.9s 112 [gpu0] === Trial 10: {'lr': 0.0011925904929803559, 'weight_decay': 1.7137162291614516e-06, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+2511.8s 113 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2511.8s 114 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+2524.6s 115 [gpu1] {"trial": 8, "epoch": 5, "train_loss": 0.7878406396072902, "val_loss": 0.11577277477247896, "val_acc": 0.9912531074486696, "val_macro_f1": 0.9871988980970209, "epoch_time_s": 71.16764879226685}
+2524.8s 116 [gpu1] [I 2026-11-17 23:46:05,775] Trial 8 finished with value: 0.9871988980970209 and parameters: {'lr': 0.0005779513613369609, 'weight_decay': 0.06292942010319513, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}. Best is trial 8 with value: 0.9871988980970209.
+2525.3s 117 [gpu1]
+2525.3s 118 [gpu1] === Trial 11: {'lr': 0.000945930874366347, 'weight_decay': 0.03750907194059627, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+2526.2s 119 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2526.2s 120 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+2591.1s 121 [gpu0] {"trial": 10, "epoch": 1, "train_loss": 1.9927578180023793, "val_loss": 0.7086513966401521, "val_acc": 0.784826443237271, "val_macro_f1": 0.7181360321751563, "epoch_time_s": 80.04337048530579}
+2605.3s 122 [gpu1] {"trial": 11, "epoch": 1, "train_loss": 1.980657367893819, "val_loss": 0.9745120583356782, "val_acc": 0.7305036368658503, "val_macro_f1": 0.6384667068489813, "epoch_time_s": 79.77671694755554}
+2670.1s 123 [gpu0] {"trial": 10, "epoch": 2, "train_loss": 1.137131188357814, "val_loss": 0.9351723813821835, "val_acc": 0.7520486143080748, "val_macro_f1": 0.6780203824126458, "epoch_time_s": 78.93124032020569}
+2670.1s 124 [gpu0] Trial 10 pruned
+2670.1s 125 [gpu0] [I 2026-11-17 23:48:31,101] Trial 10 pruned.
+2680.2s 126 [gpu1] {"trial": 11, "epoch": 2, "train_loss": 1.0687843567869637, "val_loss": 0.4205875677711649, "val_acc": 0.9012061504465518, "val_macro_f1": 0.8712448734561652, "epoch_time_s": 74.8415892124176}
+2680.2s 127 [gpu1] Trial 11 pruned
+2680.2s 128 [gpu1] [I 2026-11-17 23:48:41,144] Trial 11 pruned.
+2690.8s 129 [gpu0]
+2690.8s 130 [gpu0] === Trial 12: {'lr': 0.0013568250868922626, 'weight_decay': 0.0007372899197827114, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+2691.5s 131 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2691.5s 132 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+2700.7s 133 [gpu1]
+2700.7s 134 [gpu1] === Trial 13: {'lr': 0.00010022545488501144, 'weight_decay': 6.944054109297734e-06, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+2701.7s 135 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2701.8s 136 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+2766.1s 137 [gpu0] {"trial": 12, "epoch": 1, "train_loss": 1.9466157635945953, "val_loss": 1.1272140855826942, "val_acc": 0.6998434766596078, "val_macro_f1": 0.537426544201676, "epoch_time_s": 75.15726137161255}
+2783.5s 138 [gpu1] {"trial": 13, "epoch": 1, "train_loss": 2.735848396681668, "val_loss": 0.6859132155409703, "val_acc": 0.8088573796151367, "val_macro_f1": 0.6828924227690019, "epoch_time_s": 82.53563284873962}
+2845.7s 139 [gpu0] {"trial": 12, "epoch": 2, "train_loss": 1.1284515388895957, "val_loss": 0.49551169607325624, "val_acc": 0.8815946966209373, "val_macro_f1": 0.8507277283338548, "epoch_time_s": 79.47681760787964}
+2845.7s 140 [gpu0] Trial 12 pruned
+2845.7s 141 [gpu0] [I 2026-11-17 23:51:26,649] Trial 12 pruned.
+2858.9s 142 [gpu1] {"trial": 13, "epoch": 2, "train_loss": 0.5074258562219277, "val_loss": 0.15198031172942483, "val_acc": 0.9531350704355032, "val_macro_f1": 0.9323179292749681, "epoch_time_s": 75.385409116745}
+2858.9s 143 [gpu1] Trial 13 pruned
+2858.9s 144 [gpu1] [I 2026-11-17 23:51:39,869] Trial 13 pruned.
+2866.3s 145 [gpu0]
+2866.3s 146 [gpu0] === Trial 14: {'lr': 2.4034262979045205e-05, 'weight_decay': 0.027333617820540588, 'batch_size': 64, 'dropout': 0.0, 'label_smoothing': 0.1, 'schedule': 'constant'}
+2867.0s 147 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2867.0s 148 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+2879.5s 149 [gpu1]
+2879.5s 150 [gpu1] === Trial 15: {'lr': 0.00011435058113706124, 'weight_decay': 0.0005146807114057187, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+2880.5s 151 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2880.5s 152 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+2940.9s 153 [gpu0] {"trial": 14, "epoch": 1, "train_loss": 2.2826602820600015, "val_loss": 0.9130738071068997, "val_acc": 0.7858392413221619, "val_macro_f1": 0.6607963876123917, "epoch_time_s": 74.38046169281006}
+2961.0s 154 [gpu1] {"trial": 15, "epoch": 1, "train_loss": 2.027236099993245, "val_loss": 0.43309902514819554, "val_acc": 0.8997329895958015, "val_macro_f1": 0.8521757305546951, "epoch_time_s": 81.29145550727844}
+3021.1s 155 [gpu0] {"trial": 14, "epoch": 2, "train_loss": 1.1805516776074185, "val_loss": 0.4652167054107753, "val_acc": 0.9067305036368658, "val_macro_f1": 0.8614192466725025, "epoch_time_s": 80.23334383964539}
+3021.2s 156 [gpu0] Trial 14 pruned
+3021.2s 157 [gpu0] [I 2026-11-17 23:54:22,125] Trial 14 pruned.
+3034.4s 158 [gpu1] {"trial": 15, "epoch": 2, "train_loss": 1.0749417499879772, "val_loss": 0.23123839643271343, "val_acc": 0.9581069883067858, "val_macro_f1": 0.9363638293564837, "epoch_time_s": 73.37700343132019}
+3041.8s 159 [gpu0]
+3041.8s 160 [gpu0] === Trial 16: {'lr': 0.00031424676873478553, 'weight_decay': 0.0054012983317405444, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+3042.8s 161 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+3042.8s 162 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+3111.5s 163 [gpu1] {"trial": 15, "epoch": 3, "train_loss": 0.9560168405597129, "val_loss": 0.1908080277988654, "val_acc": 0.9712733634103674, "val_macro_f1": 0.9548429120165605, "epoch_time_s": 77.08498048782349}
+3124.2s 164 [gpu0] {"trial": 16, "epoch": 1, "train_loss": 1.745621950438853, "val_loss": 0.3366647310628383, "val_acc": 0.9251450142712457, "val_macro_f1": 0.8769032390033252, "epoch_time_s": 82.11381101608276}
+3191.5s 165 [gpu1] {"trial": 15, "epoch": 4, "train_loss": 0.8999089756038752, "val_loss": 0.16768980342351142, "val_acc": 0.9751404106435871, "val_macro_f1": 0.9658140193850492, "epoch_time_s": 79.97660875320435}
+3204.9s 166 [gpu0] {"trial": 16, "epoch": 2, "train_loss": 1.0034066371703416, "val_loss": 0.28130333630620047, "val_acc": 0.9506491114998619, "val_macro_f1": 0.9310935800246899, "epoch_time_s": 80.68941497802734}
+3204.9s 167 [gpu0] Trial 16 pruned
+3204.9s 168 [gpu0] [I 2026-11-17 23:57:25,873] Trial 16 pruned.
+3225.6s 169 [gpu0]
+3225.6s 170 [gpu0] === Trial 17: {'lr': 5.8242925433671815e-05, 'weight_decay': 0.006812851490924418, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+3226.6s 171 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+3226.6s 172 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+3262.0s 173 [gpu1] {"trial": 15, "epoch": 5, "train_loss": 0.8659730503398381, "val_loss": 0.15105013087379504, "val_acc": 0.9827824325568548, "val_macro_f1": 0.9713435033841633, "epoch_time_s": 70.43202877044678}
+3262.2s 174 [gpu1] [I 2026-11-17 23:58:23,133] Trial 15 finished with value: 0.9713435033841633 and parameters: {'lr': 0.00011435058113706124, 'weight_decay': 0.0005146807114057187, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}. Best is trial 8 with value: 0.9871988980970209.
+3262.6s 175 [gpu1]
+3262.6s 176 [gpu1] === Trial 18: {'lr': 0.00020436570225942804, 'weight_decay': 0.00038909866584284965, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+3263.6s 177 [gpu1] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+3263.6s 178 [gpu1]   scaler.step(opt); scaler.update(); sched.step()
+3305.0s 179 [gpu0] {"trial": 17, "epoch": 1, "train_loss": 2.870764922559931, "val_loss": 0.942494191053043, "val_acc": 0.7767240585581439, "val_macro_f1": 0.6341813889411211, "epoch_time_s": 79.2336483001709}
+3343.5s 180 [gpu1] {"trial": 18, "epoch": 1, "train_loss": 2.1475225914730114, "val_loss": 0.4866667301349027, "val_acc": 0.8847251634287819, "val_macro_f1": 0.8388014004446788, "epoch_time_s": 80.62830758094788}
+3384.3s 181 [gpu0] {"trial": 17, "epoch": 2, "train_loss": 1.192039384935679, "val_loss": 0.35553070959075905, "val_acc": 0.9381272442684836, "val_macro_f1": 0.9074270888467256, "epoch_time_s": 79.2577874660492}
+3384.4s 182 [gpu0] Trial 17 pruned
+3384.4s 183 [gpu0] [I 2026-11-18 00:00:25,332] Trial 17 pruned.
+3405.0s 184 [gpu0]
+3405.0s 185 [gpu0] === Trial 19: {'lr': 5.392991959420148e-05, 'weight_decay': 0.08515075830042018, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+3406.1s 186 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+3406.1s 187 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+3413.5s 188 [gpu1] {"trial": 18, "epoch": 2, "train_loss": 0.9536836525697386, "val_loss": 0.22118364189575745, "val_acc": 0.9709971457508517, "val_macro_f1": 0.9601935402953735, "epoch_time_s": 69.92893385887146}
+3485.4s 189 [gpu0] {"trial": 19, "epoch": 1, "train_loss": 2.461751481790221, "val_loss": 0.7622484358708598, "val_acc": 0.8179725623791547, "val_macro_f1": 0.705757185889952, "epoch_time_s": 80.0946569442749}
+3493.8s 190 [gpu1] {"trial": 18, "epoch": 3, "train_loss": 0.8373433562476983, "val_loss": 0.19056452919837355, "val_acc": 0.9800202559616978, "val_macro_f1": 0.9720473912169847, "epoch_time_s": 80.28355741500854}
+3565.4s 191 [gpu0] {"trial": 19, "epoch": 2, "train_loss": 1.2891238385371948, "val_loss": 0.34355231150662346, "val_acc": 0.9339839793757481, "val_macro_f1": 0.8992712939528286, "epoch_time_s": 79.94256210327148}
+3565.4s 192 [gpu0] Trial 19 pruned
+3565.5s 193 [gpu0] [I 2026-11-18 00:03:26,420] Trial 19 pruned.
+3571.1s 194 [gpu1] {"trial": 18, "epoch": 4, "train_loss": 0.7893003744355748, "val_loss": 0.156814902540663, "val_acc": 0.9863732621305589, "val_macro_f1": 0.9784310943087227, "epoch_time_s": 77.30318522453308}
+3586.1s 195 [gpu0]
+3586.1s 196 [gpu0] === Trial 20: {'lr': 0.0011646658945822738, 'weight_decay': 0.0035858738922455295, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+3586.9s 197 [gpu0] /kaggle/working/hpo.py:170: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+3586.9s 198 [gpu0]   scaler.step(opt); scaler.update(); sched.step()
+3645.3s 199 [gpu1] {"trial": 18, "epoch": 5, "train_loss": 0.7724983387448815, "val_loss": 0.16063554690211487, "val_acc": 0.9869256974495902, "val_macro_f1": 0.9801080906116146, "epoch_time_s": 74.20257472991943}
+3645.5s 200 [gpu1] [I 2026-11-18 00:04:46,484] Trial 18 finished with value: 0.9801080906116146 and parameters: {'lr': 0.00020436570225942804, 'weight_decay': 0.00038909866584284965, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.1, 'schedule': 'cosine'}. Best is trial 8 with value: 0.9871988980970209.
+3662.8s 201 [gpu0] {"trial": 20, "epoch": 1, "train_loss": 1.915386325522755, "val_loss": 1.4723464962132409, "val_acc": 0.5874228892367185, "val_macro_f1": 0.4748122807888655, "epoch_time_s": 76.43647503852844}
+3720.8s 202 [gpu0] {"trial": 20, "epoch": 2, "train_loss": 1.143686946858181, "val_loss": 0.40877779337288805, "val_acc": 0.8973391032133321, "val_macro_f1": 0.8641195782609122, "epoch_time_s": 57.95970296859741}
+3720.9s 203 [gpu0] Trial 20 pruned
+3720.9s 204 [gpu0] [I 2026-11-18 00:06:01,824] Trial 20 pruned.
+3743.3s 205 Worker exit codes: [0, 0]
+3744.4s 206 
+3744.4s 207 10 complete, 11 pruned trials
+3744.4s 208 Paper config (trial 0): macro-F1 = 0.8518407447337605
+3744.4s 209 
+3744.4s 210 Top 5:
+3744.4s 211 1. trial 8: macro-F1 0.9872  {'lr': 0.0005779513613369609, 'weight_decay': 0.06292942010319513, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+3744.4s 212 2. trial 18: macro-F1 0.9801  {'lr': 0.00020436570225942804, 'weight_decay': 0.00038909866584284965, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+3744.4s 213 3. trial 15: macro-F1 0.9713  {'lr': 0.00011435058113706124, 'weight_decay': 0.0005146807114057187, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+3744.4s 214 4. trial 5: macro-F1 0.9650  {'lr': 7.52374288453485e-05, 'weight_decay': 6.789053271698483e-05, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+3744.4s 215 5. trial 6: macro-F1 0.9647  {'lr': 7.325461083904951e-05, 'weight_decay': 1.5180899024473892e-05, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+3744.4s 216 
+3744.4s 217 Saved: hpo_*.db, hpo_*_trials.csv, hpo_*_top3.json
+3747.5s 218 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+3747.5s 219 cells[i][c] = re.sub('\\\\\|', '|', cell)
+3747.6s 220 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+3747.6s 221 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+3748.4s 222 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+3748.5s 223 [NbConvertApp] Writing 54287 bytes to __notebook__.ipynb
+3750.9s 224 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+3751.4s 225 [NbConvertApp] Writing 377124 bytes to __results__.html

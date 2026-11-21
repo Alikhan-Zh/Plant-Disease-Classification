@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+matplotlib
+optuna
+scikit-learn
+# training only (Kaggle):
+# torch
+# torchvision
+# timm

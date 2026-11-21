@@ -1,0 +1,193 @@
+6.2s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.2s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.2s 3 0.00s - to python to disable frozen modules.
+6.2s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.7s 7 0.00s - to python to disable frozen modules.
+6.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.7s 9 Writing /kaggle/working/hpo.py
+15.1s 10 2 GPU(s), 2 data workers each
+66.7s 11 [gpu0] GPU: Tesla T4 | model: mobilevit_xxs | images: /kaggle/input/datasets/abdallahalidev/plantvillage-dataset | HPO: 11403 train / 10861 val
+68.6s 12 [gpu0] [I 2026-11-18 12:20:44,004] A new study created in RDB with name: mobilevit_xxs
+68.7s 13 [gpu0]
+68.7s 14 [gpu0] === Trial 0: {'lr': 0.0001, 'weight_decay': 1e-06, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+68.9s 15 [gpu0] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+113.8s 16 [gpu1] GPU: Tesla T4 | model: mobilevit_xxs | images: /kaggle/input/datasets/abdallahalidev/plantvillage-dataset | HPO: 11403 train / 10861 val
+114.3s 17 [gpu1] [I 2026-11-18 12:21:29,679] Using an existing study with `study_name='mobilevit_xxs'` instead of creating a new one.
+114.4s 18 [gpu1]
+114.4s 19 [gpu1] === Trial 1: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+114.5s 20 [gpu1] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+768.7s 21 [gpu1] {"trial": 1, "epoch": 1, "train_loss": 2.289983959680193, "val_loss": 1.2424782023400456, "val_acc": 0.7256237915477396, "val_macro_f1": 0.46516596520638914, "epoch_time_s": 653.9568524360657}
+768.7s 22 [gpu0] {"trial": 0, "epoch": 1, "train_loss": 2.533296854978197, "val_loss": 1.509490155458077, "val_acc": 0.6816131111315716, "val_macro_f1": 0.4228037458091794, "epoch_time_s": 698.6321468353271}
+856.8s 23 [gpu0] {"trial": 0, "epoch": 2, "train_loss": 1.2469980653082386, "val_loss": 0.8284472405015956, "val_acc": 0.783905717705552, "val_macro_f1": 0.5452209549490792, "epoch_time_s": 88.07838320732117}
+857.0s 24 [gpu1] {"trial": 1, "epoch": 2, "train_loss": 0.9999797247099073, "val_loss": 0.6292404552463581, "val_acc": 0.8392413221618635, "val_macro_f1": 0.6386541124743821, "epoch_time_s": 88.23143148422241}
+943.8s 25 [gpu0] {"trial": 0, "epoch": 3, "train_loss": 0.8166264046109124, "val_loss": 0.5455705653939521, "val_acc": 0.8559064542859773, "val_macro_f1": 0.6903005868143776, "epoch_time_s": 86.92241644859314}
+945.9s 26 [gpu1] {"trial": 1, "epoch": 3, "train_loss": 0.5959458396341024, "val_loss": 0.33720558689132535, "val_acc": 0.916674339379431, "val_macro_f1": 0.8180867709440218, "epoch_time_s": 88.93720650672913}
+1031.1s 27 [gpu0] {"trial": 0, "epoch": 4, "train_loss": 0.5563298816258988, "val_loss": 0.36028789299516295, "val_acc": 0.9087560998066476, "val_macro_f1": 0.8056984941294161, "epoch_time_s": 87.29410934448242}
+1034.0s 28 [gpu1] {"trial": 1, "epoch": 4, "train_loss": 0.3888372194566084, "val_loss": 0.24627143012347905, "val_acc": 0.9390479698002026, "val_macro_f1": 0.8874640226337843, "epoch_time_s": 88.09189200401306}
+1119.0s 29 [gpu0] {"trial": 0, "epoch": 5, "train_loss": 0.3926793546154258, "val_loss": 0.24905522578044245, "val_acc": 0.9380351717153117, "val_macro_f1": 0.8662408683693689, "epoch_time_s": 87.9253556728363}
+1119.2s 30 [gpu0] [I 2026-11-18 12:38:14,606] Trial 0 finished with value: 0.8662408683693689 and parameters: {'lr': 0.0001, 'weight_decay': 1e-06, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 0 with value: 0.8662408683693689.
+1119.7s 31 [gpu0]
+1119.7s 32 [gpu0] === Trial 2: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1121.3s 33 [gpu1] {"trial": 1, "epoch": 5, "train_loss": 0.2591187632904294, "val_loss": 0.16073700662981177, "val_acc": 0.9554368842648007, "val_macro_f1": 0.9294542310195208, "epoch_time_s": 87.21008276939392}
+1121.5s 34 [gpu1] [I 2026-11-18 12:38:16,852] Trial 1 finished with value: 0.9294542310195208 and parameters: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 1 with value: 0.9294542310195208.
+1121.9s 35 [gpu1]
+1121.9s 36 [gpu1] === Trial 3: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1209.1s 37 [gpu0] {"trial": 2, "epoch": 1, "train_loss": 2.2903178381116205, "val_loss": 1.248395219624959, "val_acc": 0.7250713562287082, "val_macro_f1": 0.4646968567921482, "epoch_time_s": 89.2417483329773}
+1211.6s 38 [gpu1] {"trial": 3, "epoch": 1, "train_loss": 2.2369151805224043, "val_loss": 3.7918020504283354, "val_acc": 0.14059478869349046, "val_macro_f1": 0.07868517474694416, "epoch_time_s": 89.4947829246521}
+1297.8s 39 [gpu0] {"trial": 2, "epoch": 2, "train_loss": 1.0001656920387503, "val_loss": 0.6185810291331377, "val_acc": 0.8410827732253016, "val_macro_f1": 0.6428133693411145, "epoch_time_s": 88.59078049659729}
+1301.6s 40 [gpu1] {"trial": 3, "epoch": 2, "train_loss": 1.347893912973029, "val_loss": 2.1941700353114033, "val_acc": 0.4955344811711629, "val_macro_f1": 0.3489458859188349, "epoch_time_s": 89.92989230155945}
+1387.0s 41 [gpu0] {"trial": 2, "epoch": 3, "train_loss": 0.5992538292756241, "val_loss": 0.3409018704667516, "val_acc": 0.9146487432096492, "val_macro_f1": 0.8103405760571284, "epoch_time_s": 89.19829726219177}
+1390.3s 42 [gpu1] {"trial": 3, "epoch": 3, "train_loss": 1.1174614816234354, "val_loss": 1.0637950942876555, "val_acc": 0.668538808581162, "val_macro_f1": 0.5550212294484911, "epoch_time_s": 88.68121600151062}
+1475.6s 43 [gpu0] {"trial": 2, "epoch": 4, "train_loss": 0.3900009776685345, "val_loss": 0.2259957288775959, "val_acc": 0.946874136819814, "val_macro_f1": 0.9032050803058, "epoch_time_s": 88.5886709690094}
+1479.9s 44 [gpu1] {"trial": 3, "epoch": 4, "train_loss": 0.9679602554507469, "val_loss": 1.2823539797459154, "val_acc": 0.5999447564680969, "val_macro_f1": 0.47907175432312216, "epoch_time_s": 89.64297723770142}
+1564.2s 45 [gpu0] {"trial": 2, "epoch": 5, "train_loss": 0.2617555840380406, "val_loss": 0.15759214080836537, "val_acc": 0.956910045115551, "val_macro_f1": 0.9298539807637723, "epoch_time_s": 88.61227250099182}
+1564.4s 46 [gpu0] [I 2026-11-18 12:45:39,800] Trial 2 finished with value: 0.9298539807637723 and parameters: {'lr': 0.0001329291894316216, 'weight_decay': 0.05669849511478854, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 2 with value: 0.9298539807637723.
+1564.9s 47 [gpu0]
+1564.9s 48 [gpu0] === Trial 4: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}
+1568.8s 49 [gpu1] {"trial": 3, "epoch": 5, "train_loss": 0.8393325890215595, "val_loss": 1.6400199196673637, "val_acc": 0.5688242334959949, "val_macro_f1": 0.48175334552432475, "epoch_time_s": 88.86738514900208}
+1569.0s 50 [gpu1] [I 2026-11-18 12:45:44,414] Trial 3 finished with value: 0.5550212294484911 and parameters: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 2 with value: 0.9298539807637723.
+1569.5s 51 [gpu1]
+1569.5s 52 [gpu1] === Trial 5: {'lr': 7.52374288453485e-05, 'weight_decay': 6.789053271698483e-05, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'constant'}
+1651.0s 53 [gpu0] {"trial": 4, "epoch": 1, "train_loss": 2.906762823629915, "val_loss": 2.4509967241637582, "val_acc": 0.34729767056440475, "val_macro_f1": 0.17748506105959952, "epoch_time_s": 85.9556953907013}
+1660.9s 54 [gpu1] {"trial": 5, "epoch": 1, "train_loss": 3.2528945287961637, "val_loss": 2.532429807434841, "val_acc": 0.5730595709419022, "val_macro_f1": 0.3295985865086537, "epoch_time_s": 91.25179696083069}
+1737.5s 55 [gpu0] {"trial": 4, "epoch": 2, "train_loss": 2.1450014596574762, "val_loss": 2.2485502490833995, "val_acc": 0.39453089034158917, "val_macro_f1": 0.2946941999718463, "epoch_time_s": 86.47491526603699}
+1746.9s 56 [gpu1] {"trial": 5, "epoch": 2, "train_loss": 2.3815642494833873, "val_loss": 1.7937906562222838, "val_acc": 0.6404566798637327, "val_macro_f1": 0.3745827568261117, "epoch_time_s": 85.98048543930054}
+1823.9s 57 [gpu0] {"trial": 4, "epoch": 3, "train_loss": 1.5938311667924516, "val_loss": 1.966405909818879, "val_acc": 0.46662369947518645, "val_macro_f1": 0.34779938570439684, "epoch_time_s": 86.34295725822449}
+1832.7s 58 [gpu1] {"trial": 5, "epoch": 3, "train_loss": 1.9121082532271911, "val_loss": 1.3211787432533701, "val_acc": 0.7262682994199429, "val_macro_f1": 0.4617157772716724, "epoch_time_s": 85.81270813941956}
+1910.4s 59 [gpu0] {"trial": 4, "epoch": 4, "train_loss": 1.280394611733683, "val_loss": 9.062339703512723, "val_acc": 0.07457876806923856, "val_macro_f1": 0.018802789935742834, "epoch_time_s": 86.46099972724915}
+1918.5s 60 [gpu1] {"trial": 5, "epoch": 4, "train_loss": 1.6158861390660317, "val_loss": 1.0220087522213965, "val_acc": 0.7708314151551422, "val_macro_f1": 0.5311638179152499, "epoch_time_s": 85.73769068717957}
+1996.6s 61 [gpu0] {"trial": 4, "epoch": 5, "train_loss": 1.0670540527848715, "val_loss": 154.96306766685274, "val_acc": 0.027621765951569836, "val_macro_f1": 0.0014147006257692436, "epoch_time_s": 86.19812250137329}
+1996.8s 62 [gpu0] [I 2026-11-18 12:52:52,157] Trial 4 finished with value: 0.34779938570439684 and parameters: {'lr': 0.008123245085588688, 'weight_decay': 0.014528246637516038, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}. Best is trial 2 with value: 0.9298539807637723.
+1997.3s 63 [gpu0]
+1997.3s 64 [gpu0] === Trial 6: {'lr': 0.0019325079038215091, 'weight_decay': 5.263944381919414e-05, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+2004.1s 65 [gpu1] {"trial": 5, "epoch": 5, "train_loss": 1.4317143338449885, "val_loss": 0.8464602969230818, "val_acc": 0.8033330264248227, "val_macro_f1": 0.5731888145100691, "epoch_time_s": 85.61973476409912}
+2004.2s 66 [gpu1] Trial 5 pruned
+2004.2s 67 [gpu1] [I 2026-11-18 12:52:59,576] Trial 5 pruned.
+2024.8s 68 [gpu1]
+2024.9s 69 [gpu1] === Trial 7: {'lr': 1.0535179945522733e-05, 'weight_decay': 5.7722995220573445e-06, 'batch_size': 32, 'dropout': 0.0, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+2078.2s 70 [gpu0] {"trial": 6, "epoch": 1, "train_loss": 1.0081123441792605, "val_loss": 0.5388397339375767, "val_acc": 0.8339931866310653, "val_macro_f1": 0.7164004468794886, "epoch_time_s": 80.77754497528076}
+2114.1s 71 [gpu1] {"trial": 7, "epoch": 1, "train_loss": 3.624733554513267, "val_loss": 3.5772476554542556, "val_acc": 0.32777828929196207, "val_macro_f1": 0.19777287803705226, "epoch_time_s": 89.10953569412231}
+2168.6s 72 [gpu0] {"trial": 6, "epoch": 2, "train_loss": 0.3743310495478551, "val_loss": 0.9929534714103387, "val_acc": 0.6945032685756376, "val_macro_f1": 0.6373071421089012, "epoch_time_s": 90.31976819038391}
+2203.3s 73 [gpu1] {"trial": 7, "epoch": 2, "train_loss": 3.4640260332086115, "val_loss": 3.2282888463228163, "val_acc": 0.5643126783905718, "val_macro_f1": 0.34166666839507115, "epoch_time_s": 89.13775157928467}
+2203.3s 74 [gpu1] Trial 7 pruned
+2203.4s 75 [gpu1] [I 2026-11-18 12:56:18,749] Trial 7 pruned.
+2224.0s 76 [gpu1]
+2224.0s 77 [gpu1] === Trial 8: {'lr': 1.309073843512925e-05, 'weight_decay': 0.004779409807676917, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'constant'}
+2246.5s 78 [gpu0] {"trial": 6, "epoch": 3, "train_loss": 0.26112335678608567, "val_loss": 0.8230778425232217, "val_acc": 0.7276493877175214, "val_macro_f1": 0.6661711799644486, "epoch_time_s": 77.96180438995361}
+2312.9s 79 [gpu1] {"trial": 8, "epoch": 1, "train_loss": 3.5778568567854636, "val_loss": 3.481464191756737, "val_acc": 0.5215910137188104, "val_macro_f1": 0.31199954542639813, "epoch_time_s": 88.63682126998901}
+2337.4s 80 [gpu0] {"trial": 6, "epoch": 4, "train_loss": 0.231749732769356, "val_loss": 0.34713084788164833, "val_acc": 0.887303194917595, "val_macro_f1": 0.8522362963853423, "epoch_time_s": 90.85467624664307}
+2401.2s 81 [gpu1] {"trial": 8, "epoch": 2, "train_loss": 3.2988694330279746, "val_loss": 3.0177477488980067, "val_acc": 0.5295092532915938, "val_macro_f1": 0.3000855052663591, "epoch_time_s": 88.2676727771759}
+2401.2s 82 [gpu1] Trial 8 pruned
+2401.2s 83 [gpu1] [I 2026-11-18 12:59:36,601] Trial 8 pruned.
+2418.1s 84 [gpu0] {"trial": 6, "epoch": 5, "train_loss": 0.17745050081585564, "val_loss": 0.31166184998910823, "val_acc": 0.9054414878924593, "val_macro_f1": 0.846191369543084, "epoch_time_s": 80.63447570800781}
+2418.1s 85 [gpu0] Trial 6 pruned
+2418.1s 86 [gpu0] [I 2026-11-18 12:59:53,492] Trial 6 pruned.
+2421.8s 87 [gpu1]
+2421.8s 88 [gpu1] === Trial 9: {'lr': 1.378006948598364e-05, 'weight_decay': 0.0007978462284205744, 'batch_size': 64, 'dropout': 0.0, 'label_smoothing': 0.0, 'schedule': 'constant'}
+2438.6s 89 [gpu0]
+2438.6s 90 [gpu0] === Trial 10: {'lr': 0.00041403838073104346, 'weight_decay': 0.0005767362598237956, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+2504.3s 91 [gpu1] {"trial": 9, "epoch": 1, "train_loss": 3.5890393203563904, "val_loss": 3.5212597908010888, "val_acc": 0.5002301813829297, "val_macro_f1": 0.31161655456436277, "epoch_time_s": 82.31365323066711}
+2528.3s 92 [gpu0] {"trial": 10, "epoch": 1, "train_loss": 2.5887356685118728, "val_loss": 1.285212732087994, "val_acc": 0.6535309824141423, "val_macro_f1": 0.3830098155806828, "epoch_time_s": 89.17058968544006}
+2594.8s 93 [gpu1] {"trial": 9, "epoch": 2, "train_loss": 3.386025589503599, "val_loss": 3.200239317268531, "val_acc": 0.591566154129454, "val_macro_f1": 0.37130790317332063, "epoch_time_s": 90.51190257072449}
+2594.8s 94 [gpu1] Trial 9 pruned
+2594.8s 95 [gpu1] [I 2026-11-18 13:02:50,242] Trial 9 pruned.
+2609.5s 96 [gpu0] {"trial": 10, "epoch": 2, "train_loss": 0.9320389317829957, "val_loss": 0.5223390884726935, "val_acc": 0.8502900285424915, "val_macro_f1": 0.7204769555492553, "epoch_time_s": 81.20031261444092}
+2615.5s 97 [gpu1]
+2615.5s 98 [gpu1] === Trial 11: {'lr': 0.0038458401210954727, 'weight_decay': 6.830957075716509e-06, 'batch_size': 64, 'dropout': 0.2, 'label_smoothing': 0.0, 'schedule': 'constant'}
+2695.7s 99 [gpu0] {"trial": 10, "epoch": 3, "train_loss": 0.4387713950336649, "val_loss": 0.19337736643235467, "val_acc": 0.9475186446920173, "val_macro_f1": 0.8914782946547991, "epoch_time_s": 86.15198588371277}
+2708.0s 100 [gpu1] {"trial": 11, "epoch": 1, "train_loss": 1.104582739680001, "val_loss": 1.2018881985939467, "val_acc": 0.6521498941165639, "val_macro_f1": 0.4691540910565672, "epoch_time_s": 92.30078101158142}
+2785.3s 101 [gpu0] {"trial": 10, "epoch": 4, "train_loss": 0.26377452462074463, "val_loss": 0.1229628665694632, "val_acc": 0.965288647454194, "val_macro_f1": 0.9316399891746343, "epoch_time_s": 89.61775851249695}
+2800.0s 102 [gpu1] {"trial": 11, "epoch": 2, "train_loss": 0.46318095595983977, "val_loss": 0.8392642307551501, "val_acc": 0.7456956081392137, "val_macro_f1": 0.6441626262504847, "epoch_time_s": 91.95802569389343}
+2875.2s 103 [gpu0] {"trial": 10, "epoch": 5, "train_loss": 0.19338762234854565, "val_loss": 0.1136459443255492, "val_acc": 0.9684191142620385, "val_macro_f1": 0.9380718996871703, "epoch_time_s": 89.81674599647522}
+2875.4s 104 [gpu0] [I 2026-11-18 13:07:30,791] Trial 10 finished with value: 0.9380718996871703 and parameters: {'lr': 0.00041403838073104346, 'weight_decay': 0.0005767362598237956, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}. Best is trial 10 with value: 0.9380718996871703.
+2875.9s 105 [gpu0]
+2875.9s 106 [gpu0] === Trial 12: {'lr': 0.0004983491647823785, 'weight_decay': 0.0006078408551989326, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+2892.1s 107 [gpu1] {"trial": 11, "epoch": 3, "train_loss": 0.3479244527354669, "val_loss": 0.45670083321849786, "val_acc": 0.8559985268391492, "val_macro_f1": 0.7962588973592098, "epoch_time_s": 92.08296966552734}
+2964.9s 108 [gpu0] {"trial": 12, "epoch": 1, "train_loss": 2.487536110904779, "val_loss": 1.2216032488483737, "val_acc": 0.6583187551790811, "val_macro_f1": 0.40169369726088494, "epoch_time_s": 88.77489852905273}
+2983.4s 109 [gpu1] {"trial": 11, "epoch": 4, "train_loss": 0.275930310777399, "val_loss": 1.348965996943415, "val_acc": 0.6564773041156431, "val_macro_f1": 0.5664267126369206, "epoch_time_s": 91.30038905143738}
+2983.5s 110 [gpu1] Trial 11 pruned
+2983.5s 111 [gpu1] [I 2026-11-18 13:09:18,889] Trial 11 pruned.
+3004.2s 112 [gpu1]
+3004.2s 113 [gpu1] === Trial 13: {'lr': 0.0005222346582001067, 'weight_decay': 1.11367068559948e-06, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+3043.3s 114 [gpu0] {"trial": 12, "epoch": 2, "train_loss": 0.8096611668889442, "val_loss": 0.6376634475638464, "val_acc": 0.8359267102476752, "val_macro_f1": 0.7222946600777778, "epoch_time_s": 78.41884589195251}
+3099.1s 115 [gpu1] {"trial": 13, "epoch": 1, "train_loss": 2.4638941776886414, "val_loss": 1.5469962434757263, "val_acc": 0.6060215449774422, "val_macro_f1": 0.3594646003812381, "epoch_time_s": 94.73316502571106}
+3133.2s 116 [gpu0] {"trial": 12, "epoch": 3, "train_loss": 0.38713609600921023, "val_loss": 0.17360479631275555, "val_acc": 0.947794862351533, "val_macro_f1": 0.9030293338075996, "epoch_time_s": 89.83086395263672}
+3193.6s 117 [gpu1] {"trial": 13, "epoch": 2, "train_loss": 0.8180443066057195, "val_loss": 0.5758284896614911, "val_acc": 0.8273639628026885, "val_macro_f1": 0.7009254916355924, "epoch_time_s": 94.47532415390015}
+3222.8s 118 [gpu0] {"trial": 12, "epoch": 4, "train_loss": 0.21872373167006823, "val_loss": 0.09449544023791352, "val_acc": 0.9719178712825707, "val_macro_f1": 0.9449129156349919, "epoch_time_s": 89.63021063804626}
+3287.5s 119 [gpu1] {"trial": 13, "epoch": 3, "train_loss": 0.3815839850458871, "val_loss": 0.19215466736671555, "val_acc": 0.9445723229905165, "val_macro_f1": 0.8995149424696316, "epoch_time_s": 93.84557127952576}
+3312.0s 120 [gpu0] {"trial": 12, "epoch": 5, "train_loss": 0.15291035331241534, "val_loss": 0.0836385188319167, "val_acc": 0.9767977166006814, "val_macro_f1": 0.9584532841135678, "epoch_time_s": 89.14531469345093}
+3312.2s 121 [gpu0] [I 2026-11-18 13:14:47,630] Trial 12 finished with value: 0.9584532841135678 and parameters: {'lr': 0.0004983491647823785, 'weight_decay': 0.0006078408551989326, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}. Best is trial 12 with value: 0.9584532841135678.
+3312.7s 122 [gpu0]
+3312.7s 123 [gpu0] === Trial 14: {'lr': 0.0011580957465557222, 'weight_decay': 0.00034646881307580656, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+3382.4s 124 [gpu1] {"trial": 13, "epoch": 4, "train_loss": 0.21123912358091454, "val_loss": 0.09319618611844598, "val_acc": 0.9748641929840715, "val_macro_f1": 0.951822304466618, "epoch_time_s": 94.86482000350952}
+3403.2s 125 [gpu0] {"trial": 14, "epoch": 1, "train_loss": 2.05452017820953, "val_loss": 1.049832386992911, "val_acc": 0.6934904704907467, "val_macro_f1": 0.5044171862943996, "epoch_time_s": 90.21842765808105}
+3477.1s 126 [gpu1] {"trial": 13, "epoch": 5, "train_loss": 0.15237507458483235, "val_loss": 0.08534386751291974, "val_acc": 0.9763373538348218, "val_macro_f1": 0.9576177887136438, "epoch_time_s": 94.7643711566925}
+3477.3s 127 [gpu1] [I 2026-11-18 13:17:32,729] Trial 13 finished with value: 0.9576177887136438 and parameters: {'lr': 0.0005222346582001067, 'weight_decay': 1.11367068559948e-06, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}. Best is trial 12 with value: 0.9584532841135678.
+3477.8s 128 [gpu1]
+3477.8s 129 [gpu1] === Trial 15: {'lr': 3.542647719128083e-05, 'weight_decay': 7.6256357104511e-05, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+3492.6s 130 [gpu0] {"trial": 14, "epoch": 2, "train_loss": 0.6358564478460322, "val_loss": 0.4797571013383955, "val_acc": 0.8547095110947427, "val_macro_f1": 0.7382626996994579, "epoch_time_s": 89.37678241729736}
+3572.8s 131 [gpu1] {"trial": 15, "epoch": 1, "train_loss": 3.575446653901861, "val_loss": 3.3332346586131356, "val_acc": 0.5404658871190499, "val_macro_f1": 0.32173164785337643, "epoch_time_s": 94.8027868270874}
+3581.5s 132 [gpu0] {"trial": 14, "epoch": 3, "train_loss": 0.32247041681718625, "val_loss": 0.13753287890001112, "val_acc": 0.9557131019243164, "val_macro_f1": 0.9303115760099684, "epoch_time_s": 88.88741493225098}
+3666.6s 133 [gpu1] {"trial": 15, "epoch": 2, "train_loss": 2.791314788748709, "val_loss": 2.278602356696017, "val_acc": 0.5239849001012798, "val_macro_f1": 0.28174326986266474, "epoch_time_s": 93.71177124977112}
+3666.6s 134 [gpu1] Trial 15 pruned
+3666.7s 135 [gpu1] [I 2026-11-18 13:20:42,046] Trial 15 pruned.
+3669.1s 136 [gpu0] {"trial": 14, "epoch": 4, "train_loss": 0.17773820453564101, "val_loss": 0.06979644780395637, "val_acc": 0.9785470951109474, "val_macro_f1": 0.9657944089682156, "epoch_time_s": 87.54241466522217}
+3687.3s 137 [gpu1]
+3687.3s 138 [gpu1] === Trial 16: {'lr': 0.0004769819726631226, 'weight_decay': 2.6190206357771716e-06, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+3749.5s 139 [gpu0] {"trial": 14, "epoch": 5, "train_loss": 0.10781278038460217, "val_loss": 0.05959916560703215, "val_acc": 0.980756836387073, "val_macro_f1": 0.9688961700915615, "epoch_time_s": 80.448970079422}
+3749.7s 140 [gpu0] [I 2026-11-18 13:22:05,100] Trial 14 finished with value: 0.9688961700915615 and parameters: {'lr': 0.0011580957465557222, 'weight_decay': 0.00034646881307580656, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}. Best is trial 14 with value: 0.9688961700915615.
+3750.2s 141 [gpu0]
+3750.2s 142 [gpu0] === Trial 17: {'lr': 0.003939233520364024, 'weight_decay': 5.078579413178768e-05, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+3778.4s 143 [gpu1] {"trial": 16, "epoch": 1, "train_loss": 2.513386076086023, "val_loss": 1.319500737971292, "val_acc": 0.6429426387993739, "val_macro_f1": 0.38235880651966897, "epoch_time_s": 90.89609932899475}
+3842.7s 144 [gpu0] {"trial": 17, "epoch": 1, "train_loss": 2.0549241813381065, "val_loss": 3.920028241055412, "val_acc": 0.22244728846330908, "val_macro_f1": 0.13421844509160885, "epoch_time_s": 92.21607041358948}
+3868.9s 145 [gpu1] {"trial": 16, "epoch": 2, "train_loss": 0.8422231137585104, "val_loss": 0.5123493024716993, "val_acc": 0.8484485774790534, "val_macro_f1": 0.7430541114185563, "epoch_time_s": 90.4025239944458}
+3934.4s 146 [gpu0] {"trial": 17, "epoch": 2, "train_loss": 1.2993772944037834, "val_loss": 0.9219018730512696, "val_acc": 0.7258079366540834, "val_macro_f1": 0.645369194817453, "epoch_time_s": 91.64931130409241}
+3959.8s 147 [gpu1] {"trial": 16, "epoch": 3, "train_loss": 0.39982333611906246, "val_loss": 0.17916225163759464, "val_acc": 0.948715587883252, "val_macro_f1": 0.9067756453199659, "epoch_time_s": 90.91168403625488}
+4026.9s 148 [gpu0] {"trial": 17, "epoch": 3, "train_loss": 1.0495205303926147, "val_loss": 0.308511353188836, "val_acc": 0.9400607678850934, "val_macro_f1": 0.900636933636433, "epoch_time_s": 92.46938157081604}
+4050.8s 149 [gpu1] {"trial": 16, "epoch": 4, "train_loss": 0.23402560192547486, "val_loss": 0.10291259915896096, "val_acc": 0.9707209280913359, "val_macro_f1": 0.9464168214150271, "epoch_time_s": 90.99896287918091}
+4118.7s 150 [gpu0] {"trial": 17, "epoch": 4, "train_loss": 0.9093313950501131, "val_loss": 0.1466878211012028, "val_acc": 0.9765214989411657, "val_macro_f1": 0.9637715465847485, "epoch_time_s": 91.81778526306152}
+4141.7s 151 [gpu1] {"trial": 16, "epoch": 5, "train_loss": 0.16656112549512575, "val_loss": 0.09085442868454352, "val_acc": 0.9748641929840715, "val_macro_f1": 0.957848844475199, "epoch_time_s": 90.86020374298096}
+4141.9s 152 [gpu1] [I 2026-11-18 13:28:37,288] Trial 16 finished with value: 0.957848844475199 and parameters: {'lr': 0.0004769819726631226, 'weight_decay': 2.6190206357771716e-06, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}. Best is trial 14 with value: 0.9688961700915615.
+4142.4s 153 [gpu1]
+4142.4s 154 [gpu1] === Trial 18: {'lr': 0.004963838578643586, 'weight_decay': 0.0009853891691019448, 'batch_size': 32, 'dropout': 0.2, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+4209.9s 155 [gpu0] {"trial": 17, "epoch": 5, "train_loss": 0.8393672741530986, "val_loss": 0.13086791390181138, "val_acc": 0.9838873031949176, "val_macro_f1": 0.9721025198254869, "epoch_time_s": 91.17394495010376}
+4210.1s 156 [gpu0] [I 2026-11-18 13:29:45,479] Trial 17 finished with value: 0.9721025198254869 and parameters: {'lr': 0.003939233520364024, 'weight_decay': 5.078579413178768e-05, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}. Best is trial 17 with value: 0.9721025198254869.
+4210.6s 157 [gpu0]
+4210.6s 158 [gpu0] === Trial 19: {'lr': 0.002538237058069076, 'weight_decay': 1.4747422360524641e-05, 'batch_size': 32, 'dropout': 0.2, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+4232.7s 159 [gpu1] {"trial": 18, "epoch": 1, "train_loss": 1.5617300683862707, "val_loss": 5.7786772611537955, "val_acc": 0.3090875609980665, "val_macro_f1": 0.18917853021090622, "epoch_time_s": 90.13344669342041}
+4301.2s 160 [gpu0] {"trial": 19, "epoch": 1, "train_loss": 1.9926645009035475, "val_loss": 1.9814442427445267, "val_acc": 0.49912531074486693, "val_macro_f1": 0.352063120204219, "epoch_time_s": 90.41588973999023}
+4322.5s 161 [gpu1] {"trial": 18, "epoch": 2, "train_loss": 0.6845677624341477, "val_loss": 3.154491246026498, "val_acc": 0.431359911610349, "val_macro_f1": 0.3109917207824964, "epoch_time_s": 89.73268032073975}
+4322.5s 162 [gpu1] Trial 18 pruned
+4322.5s 163 [gpu1] [I 2026-11-18 13:31:37,902] Trial 18 pruned.
+4343.2s 164 [gpu1]
+4343.2s 165 [gpu1] === Trial 20: {'lr': 0.009234907655481227, 'weight_decay': 1.1438295982496487e-05, 'batch_size': 64, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+4377.9s 166 [gpu0] {"trial": 19, "epoch": 2, "train_loss": 1.129583152994681, "val_loss": 1.5060125833200426, "val_acc": 0.6067581254028174, "val_macro_f1": 0.512192679102268, "epoch_time_s": 76.59863829612732}
+4377.9s 167 [gpu0] Trial 19 pruned
+4377.9s 168 [gpu0] [I 2026-11-18 13:32:33,301] Trial 19 pruned.
+4414.0s 169 [gpu1] {"trial": 20, "epoch": 1, "train_loss": 2.037877106934451, "val_loss": 7.582789439152682, "val_acc": 0.05386244360556118, "val_macro_f1": 0.02242748145105902, "epoch_time_s": 70.65031886100769}
+4473.1s 170 [gpu1] {"trial": 20, "epoch": 2, "train_loss": 1.4004543343286835, "val_loss": 0.8842937281618855, "val_acc": 0.7460638983519013, "val_macro_f1": 0.6191061924993133, "epoch_time_s": 59.05508518218994}
+4473.1s 171 [gpu1] Trial 20 pruned
+4473.1s 172 [gpu1] [I 2026-11-18 13:34:08,528] Trial 20 pruned.
+4495.5s 173 Worker exit codes: [0, 0]
+4496.6s 174 
+4496.6s 175 11 complete, 10 pruned trials
+4496.6s 176 Paper config (trial 0): macro-F1 = 0.8662408683693689
+4496.6s 177 
+4496.6s 178 Top 5:
+4496.6s 179 1. trial 17: macro-F1 0.9721  {'lr': 0.003939233520364024, 'weight_decay': 5.078579413178768e-05, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.1, 'schedule': 'cosine'}
+4496.6s 180 2. trial 14: macro-F1 0.9689  {'lr': 0.0011580957465557222, 'weight_decay': 0.00034646881307580656, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+4496.6s 181 3. trial 12: macro-F1 0.9585  {'lr': 0.0004983491647823785, 'weight_decay': 0.0006078408551989326, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+4496.6s 182 4. trial 16: macro-F1 0.9578  {'lr': 0.0004769819726631226, 'weight_decay': 2.6190206357771716e-06, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+4496.6s 183 5. trial 13: macro-F1 0.9576  {'lr': 0.0005222346582001067, 'weight_decay': 1.11367068559948e-06, 'batch_size': 32, 'dropout': 0.5, 'label_smoothing': 0.0, 'schedule': 'cosine'}
+4496.6s 184 
+4496.6s 185 Saved: hpo_*.db, hpo_*_trials.csv, hpo_*_top3.json
+4499.6s 186 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+4499.6s 187 cells[i][c] = re.sub('\\\\\|', '|', cell)
+4499.7s 188 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+4499.7s 189 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+4500.5s 190 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+4500.6s 191 [NbConvertApp] Writing 46594 bytes to __notebook__.ipynb
+4503.1s 192 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+4503.5s 193 [NbConvertApp] Writing 371067 bytes to __results__.html

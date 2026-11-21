@@ -1,0 +1,251 @@
+{
+  "tag": "mobilevit_xxs_final_seed2",
+  "model": "mobilevit_xxs",
+  "cfg": {
+    "lr": 0.0004983491647823785,
+    "weight_decay": 0.0006078408551989326,
+    "batch_size": 32,
+    "dropout": 0.5,
+    "label_smoothing": 0.0,
+    "schedule": "cosine"
+  },
+  "seed": 2,
+  "epochs_max": 20,
+  "epochs_run": 20,
+  "best_epoch": 19,
+  "train_time_s": 2772.56036233902,
+  "params_M": 0.963222,
+  "gpu": "Tesla T4",
+  "val": {
+    "loss": 0.005343689316934254,
+    "acc": 0.9984347665960777,
+    "macro_f1": 0.997488757780633
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.6394467370140522,
+      "val_loss": 0.5725684865476369,
+      "val_acc": 0.8309547923763926,
+      "val_macro_f1": 0.7155064367930888,
+      "lr": 0.0004983491647823785,
+      "epoch_time_s": 142.29426908493042
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.27566873521654667,
+      "val_loss": 0.1555050356875587,
+      "val_acc": 0.9500966761808305,
+      "val_macro_f1": 0.9164740401151602,
+      "lr": 0.0004949507482533917,
+      "epoch_time_s": 138.09279227256775
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.14798358649567786,
+      "val_loss": 0.14947234842768142,
+      "val_acc": 0.9515698370315809,
+      "val_macro_f1": 0.9329400405741245,
+      "lr": 0.0004848481986103314,
+      "epoch_time_s": 138.65442991256714
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1173284363123983,
+      "val_loss": 0.06886177007052333,
+      "val_acc": 0.9785470951109474,
+      "val_macro_f1": 0.967827130985621,
+      "lr": 0.0004683170870720788,
+      "epoch_time_s": 137.45053553581238
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.09085803064372526,
+      "val_loss": 0.050564191047992806,
+      "val_acc": 0.9837031580885738,
+      "val_macro_f1": 0.9717913827514728,
+      "lr": 0.000445808339268006,
+      "epoch_time_s": 136.7392177581787
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.07252335495675624,
+      "val_loss": 0.10664723925925321,
+      "val_acc": 0.9656569376668815,
+      "val_macro_f1": 0.9572248620181328,
+      "lr": 0.0004179359351622817,
+      "epoch_time_s": 138.24454474449158
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.06636063926543322,
+      "val_loss": 0.07010178410446376,
+      "val_acc": 0.9792836755363227,
+      "val_macro_f1": 0.9738641076531236,
+      "lr": 0.0003854601612809752,
+      "epoch_time_s": 138.05776286125183
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.053138850873497824,
+      "val_loss": 0.03134660126416129,
+      "val_acc": 0.9903323819169506,
+      "val_macro_f1": 0.9859267629031587,
+      "lr": 0.0003492668720775444,
+      "epoch_time_s": 137.3071882724762
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.042406682690829915,
+      "val_loss": 0.039226716121545234,
+      "val_acc": 0.9873860602154497,
+      "val_macro_f1": 0.9794254217573272,
+      "lr": 0.00031034332613259557,
+      "epoch_time_s": 137.89813351631165
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.03601366868705536,
+      "val_loss": 0.027150678210532065,
+      "val_acc": 0.9918976153208728,
+      "val_macro_f1": 0.9900277931012652,
+      "lr": 0.00026975125631339546,
+      "epoch_time_s": 138.45464825630188
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.029596360006448896,
+      "val_loss": 0.015723385324305676,
+      "val_acc": 0.9945677193628579,
+      "val_macro_f1": 0.9915245052884956,
+      "lr": 0.00022859790846898318,
+      "epoch_time_s": 138.3865578174591
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.02213769868053904,
+      "val_loss": 0.014480428421055116,
+      "val_acc": 0.9950280821287174,
+      "val_macro_f1": 0.9929909276204787,
+      "lr": 0.000188005838649783,
+      "epoch_time_s": 139.18311381340027
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.019033205153290322,
+      "val_loss": 0.0220352758548738,
+      "val_acc": 0.9928183408525918,
+      "val_macro_f1": 0.9895628990919301,
+      "lr": 0.00014908229270483423,
+      "epoch_time_s": 137.02699542045593
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.01559394546537311,
+      "val_loss": 0.016225289216318203,
+      "val_acc": 0.9948439370223736,
+      "val_macro_f1": 0.9931938786628821,
+      "lr": 0.00011288900350140336,
+      "epoch_time_s": 137.75427865982056
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.009975759954314926,
+      "val_loss": 0.008408915496173572,
+      "val_acc": 0.9968695331921554,
+      "val_macro_f1": 0.9943407739297827,
+      "lr": 8.041322962009695e-05,
+      "epoch_time_s": 137.42671275138855
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.00819964747069358,
+      "val_loss": 0.007862481269601013,
+      "val_acc": 0.9974219685111868,
+      "val_macro_f1": 0.9962554561190431,
+      "lr": 5.254082551437255e-05,
+      "epoch_time_s": 141.14778208732605
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.005829287468508301,
+      "val_loss": 0.005842599071430536,
+      "val_acc": 0.9979744038302182,
+      "val_macro_f1": 0.9969089242061052,
+      "lr": 3.0032077710299692e-05,
+      "epoch_time_s": 138.1555314064026
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.004550997644863716,
+      "val_loss": 0.00621689984744869,
+      "val_acc": 0.9983426940429058,
+      "val_macro_f1": 0.9973138870245333,
+      "lr": 1.3500966172047108e-05,
+      "epoch_time_s": 138.3084855079651
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.004051982396122982,
+      "val_loss": 0.005343689316934254,
+      "val_acc": 0.9984347665960777,
+      "val_macro_f1": 0.997488757780633,
+      "lr": 3.3984165289867995e-06,
+      "epoch_time_s": 140.73005652427673
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.0035692528706191464,
+      "val_loss": 0.006075506863442347,
+      "val_acc": 0.9986189117024216,
+      "val_macro_f1": 0.9976856401227772,
+      "lr": 0.0,
+      "epoch_time_s": 140.8409252166748
+    }
+  ],
+  "test": {
+    "loss": 0.010366976118877935,
+    "acc": 0.9976063340084699,
+    "macro_f1": 0.99656343075446
+  },
+  "test_per_class_f1": {
+    "Apple___Apple_scab": 0.9921259842519685,
+    "Apple___Black_rot": 1.0,
+    "Apple___Cedar_apple_rust": 1.0,
+    "Apple___healthy": 1.0,
+    "Blueberry___healthy": 1.0,
+    "Cherry_(including_sour)___Powdery_mildew": 0.9952153110047847,
+    "Cherry_(including_sour)___healthy": 1.0,
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 0.9514563106796117,
+    "Corn_(maize)___Common_rust_": 0.9957805907172996,
+    "Corn_(maize)___Northern_Leaf_Blight": 0.9693877551020408,
+    "Corn_(maize)___healthy": 0.9957081545064378,
+    "Grape___Black_rot": 1.0,
+    "Grape___Esca_(Black_Measles)": 1.0,
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": 1.0,
+    "Grape___healthy": 1.0,
+    "Orange___Haunglongbing_(Citrus_greening)": 1.0,
+    "Peach___Bacterial_spot": 1.0,
+    "Peach___healthy": 1.0,
+    "Pepper,_bell___Bacterial_spot": 1.0,
+    "Pepper,_bell___healthy": 1.0,
+    "Potato___Early_blight": 1.0,
+    "Potato___Late_blight": 1.0,
+    "Potato___healthy": 1.0,
+    "Raspberry___healthy": 1.0,
+    "Soybean___healthy": 0.9980314960629921,
+    "Squash___Powdery_mildew": 1.0,
+    "Strawberry___Leaf_scorch": 1.0,
+    "Strawberry___healthy": 1.0,
+    "Tomato___Bacterial_spot": 1.0,
+    "Tomato___Early_blight": 0.9950248756218906,
+    "Tomato___Late_blight": 0.9894736842105263,
+    "Tomato___Leaf_Mold": 1.0,
+    "Tomato___Septoria_leaf_spot": 1.0,
+    "Tomato___Spider_mites Two-spotted_spider_mite": 0.9970149253731343,
+    "Tomato___Target_Spot": 0.99644128113879,
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": 1.0,
+    "Tomato___Tomato_mosaic_virus": 1.0,
+    "Tomato___healthy": 0.99375
+  }
+}
