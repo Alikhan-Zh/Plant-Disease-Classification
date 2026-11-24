@@ -124,9 +124,90 @@ Mean ± std: MobileNet 99.80 ± 0.03 % accuracy, 0.9967 ± 0.0003 macro-F1; Mobi
 
 **Compute.** HPO took ~62 min (MobileNet) and ~75 min (MobileViT) wall time on 2× T4. Final runs took 44–54 min (MobileNet) and 46–75 min (MobileViT) each, two runs in parallel. MobileViT has fewer parameters but trains slower per epoch (~138 s vs. ~105–115 s when running alone on a GPU). The first epoch of each Kaggle session is slow (up to ~10 min) while images are read from disk for the first time.
 
-## 7. Limitations
+## 7. Compression (FP16, INT8)
 
-- PlantVillage consists of lab images with uniform backgrounds; near-ceiling accuracy does not imply field performance. A cross-domain test on PlantDoc is planned.
+**Setup.** Each final checkpoint was exported to ONNX (opset 17; logits match PyTorch within ~1e-5). Variants:
+- **FP16**: ONNX Runtime's float16 converter (the `onnxconverter-common` converter produced an invalid MobileViT graph because of Cast nodes in the attention blocks).
+- **INT8 static**: QDQ format, per-channel int8 weights, per-tensor uint8 activations, MinMax calibration on 266–532 training images.
+- **INT8 dynamic**: weights int8, activations quantized at run time.
+All accuracies are on the full PlantVillage test set, three seeds.
+
+**FP16 is lossless:** MobileNet 99.80 % (3.00 MB, was 5.96 MB), MobileViT 99.71 % (2.11 MB, was 3.88 MB), 99.98–99.99 % identical predictions.
+
+**INT8 failed for both models** (5–18 % accuracy) in every configuration: static and dynamic, U8S8/U8U8/S8S8, `reduce_range`, depthwise convolutions excluded, ONNX Runtime 1.29 and 1.32, x86 with and without VNNI, and ARM (Raspberry Pi). Diagnosis with the real models:
+- The graph pre-processing step is not the cause (pre-processed FP32 model unchanged).
+- Quantizing only MatMul/Gemm (attention, classifier) costs nothing; quantizing only convolutions collapses the model.
+- Quantizing one convolution at a time: MobileNet's stem convolution alone drops accuracy to 22 %, its first depthwise convolution to 51 %; two early MobileViT depthwise convolutions alone drop it to 62 % and 24 %.
+- Activation statistics: inputs to several convolutions contain a few channels with 25–100× the range of the typical channel (e.g. first MobileNet depthwise input: max 35.5 vs. median channel max 0.43), and BatchNorm folding produces depthwise weights up to |355|. Per-tensor 8-bit activations round the small channels to zero and later layers amplify the error. This is the failure mode described by Nagel et al. (2019) for MobileNetV2.
+
+**Mixed precision.** Convolutions were ranked by the accuracy cost of quantizing each one alone (on a 1,000-image validation subset), and the k most sensitive were kept in FP32, with k chosen as the smallest value within 1 point of FP32 validation accuracy (k ∈ {0, 2, 4, 8, 12, 16, 24, 32}). Only Conv, Gemm and MatMul were quantized; quantizing Add/Mul/activations as well made results worse.
+
+**Quantization-aware training (QAT).** 3 epochs of fine-tuning (AdamW, lr 5e-5, cosine, BatchNorm statistics frozen) with fake quantization at conv inputs, BatchNorm outputs before the activation, bias-convolution outputs and per-channel weights; activation ranges were min/max values reset every 200 steps.
+
+| Model | Variant | Size | Test accuracy (3 seeds) |
+|---|---|---|---|
+| MobileNetV3-Small | FP32 | 5.96 MB | 99.81 ± 0.03 % |
+| | INT8 full (PTQ) | 1.79 MB | 13.1 ± 8.8 % |
+| | INT8 mixed (PTQ), 32 of 53 convs FP32 | 3.38 MB | 92.5 ± 7.6 % (84.1 / 98.8 / 94.5) |
+| | FP32 after QAT | 5.96 MB | 92.8 ± 1.6 % |
+| | INT8 mixed (QAT), 12 convs FP32 | 1.98 MB | 94.3 ± 0.7 % |
+| MobileViT-XXS | FP32 | 3.88 MB | 99.71 ± 0.06 % |
+| | INT8 full (PTQ) | 1.44 MB | 9.4 ± 4.7 % |
+| | **INT8 mixed (PTQ), 8 of 35 convs FP32** | **1.43 MB** | **99.53 ± 0.09 %** |
+| | FP32 after QAT | 3.88 MB | 59.1 ± 2.6 % |
+| | INT8 mixed (QAT), 2 convs FP32 | 1.44 MB | 66.2 ± 2.9 % |
+
+- MobileViT tolerates INT8 well once 8 sensitive convolutions stay in FP32. MobileNet needs more than 32 FP32 convolutions and is unstable across seeds; its mixed model is barely smaller than FP16.
+- Our QAT degraded FP32 accuracy (MobileNet −7 points, MobileViT −41 points). The likely cause is the simplified scheme: narrow activation ranges (reset every 200 steps) clip activations during training, the model learns to depend on that clipping, and behaves differently without it; MobileViT's unbounded SiLU activations are affected most. Proper QAT (framework observers, longer schedule, BatchNorm folding during training) is left as future work.
+
+## 8. PlantDoc (second dataset)
+
+- **Data:** PlantDoc cropped-leaf classification images (Singh et al., 2020) from the authors' GitHub repository: 2,578 images, 28 classes, original split 2,342 train / 236 test. Every PlantDoc class maps one-to-one onto a PlantVillage class (e.g. "Corn leaf blight" → `Corn_(maize)___Northern_Leaf_Blight`, "Tomato leaf" → `Tomato___healthy`). Images were resized to 224×224 exactly like PlantVillage. For fine-tuning, 10 % of PlantDoc train (stratified, 234 images) was held out as validation.
+- **Cross-domain test:** PlantVillage checkpoints evaluated without any PlantDoc training; predictions restricted to the 28 PlantDoc classes (38-way accuracy also reported).
+- **Fine-tuning:** 30 epochs on PlantDoc train with each model's winning PlantVillage configuration; best epoch chosen by validation macro-F1; one test evaluation. Two starting points: ImageNet weights, or our PlantVillage checkpoint with the 28-class head initialised from the matching PlantVillage head rows. 3 seeds each.
+
+| Setting (PlantDoc test split, 236 images) | MobileNetV3-Small | MobileViT-XXS |
+|---|---|---|
+| Trained on PlantVillage only | 23.0 ± 0.5 % (macro-F1 0.19) | **29.5 ± 0.9 %** (0.26) |
+| Fine-tuned on PlantDoc from ImageNet | 56.4 ± 3.7 % (0.56) | **64.0 ± 2.7 %** (0.63) |
+| Fine-tuned on PlantDoc from our PlantVillage model | 55.4 ± 1.4 % (0.55) | **60.0 ± 0.9 %** (0.59) |
+
+- On all 2,578 PlantDoc images the PlantVillage-only models reach 17.0 % (MobileNet) and 19.3 % (MobileViT), and identify the correct crop in only 29–37 % of images.
+- MobileViT is ahead in every setting and every seed.
+- PlantVillage pretraining did not help compared with ImageNet (equal for MobileNet, −4 points for MobileViT), although it reduced seed variance. Lab-image features appear to over-specialise.
+- Classes that still transfer without PlantDoc training have distinctive, high-contrast symptoms (tomato late blight, corn gray leaf spot, squash powdery mildew: 40–70 % recall); healthy leaves and subtle diseases (bacterial spot, mosaic virus, soybean, cherry) are near 0 %.
+- Compression costs more out of domain: FP16 is unchanged, MobileViT INT8-mixed loses ~1 point (19.3 → 18.3 %, vs. 0.2 points on PlantVillage), MobileNet INT8-mixed loses ~4 points (17.0 → 13.3 %).
+
+## 9. Raspberry Pi 5 benchmark
+
+- **Device:** Raspberry Pi 5, 64-bit Raspberry Pi OS, ONNX Runtime (CPU execution provider), Python virtual environment.
+- **Protocol (`src/pi_benchmark.py`):** each model in a fresh process; 30 warm-up runs, then 200 single-image runs with 1 thread and with 4 threads (median and 95th percentile); accuracy on 380 test images (10 per class); peak process memory; CPU temperature before/after and throttling flags. CPU temperature stayed at 49–61 °C and no throttling occurred (`throttled=0x0`).
+- Accuracy on the Pi matched Kaggle for every file, so the ARM CPU reproduces the x86 results (including the broken full-INT8 models).
+
+| Model | Variant | Size | 1 thread | 4 threads |
+|---|---|---|---|---|
+| MobileNetV3-Small | FP32 | 5.96 MB | 13.2 ms | **6.1 ms** |
+| | FP16 | 3.00 MB | 13.4 ms | 10.2 ms |
+| | INT8 full (broken accuracy) | 1.79 MB | 7.4 ms | 5.3 ms |
+| | INT8 mixed (PTQ) | 3.38 MB | 10.9 ms | 5.7 ms |
+| | INT8 mixed (QAT) | 1.98 MB | 9.2 ms | 5.4 ms |
+| MobileViT-XXS | FP32 | 3.88 MB | 42.9 ms | **23.5 ms** |
+| | FP16 | 2.11 MB | 79.9 ms | 50.9 ms |
+| | INT8 full (broken accuracy) | 1.44 MB | 44.5 ms | 32.8 ms |
+| | INT8 mixed (PTQ) | 1.43 MB | 44.5 ms | 32.3 ms |
+
+- MobileNet is ~3–4× faster than MobileViT despite having more parameters; attention, unfold/fold reshapes and SiLU are costlier on the CPU than their parameter count suggests.
+- FP16 is a storage format only on this CPU: ONNX Runtime has no optimised FP16 kernels here, so FP16 models run slower than FP32.
+- INT8 speeds up MobileNet's single-thread inference (13.2 → 7.4–10.9 ms) but gains little with 4 threads; for MobileViT INT8 is slower than FP32, because many operations stay in float and the inserted quantize/dequantize conversions cost more than the integer convolutions save.
+- Peak memory (485–790 MB) includes the 380 test images held as float arrays (~290 MB) and the Python runtime, so it is reported only as process memory; MobileViT used ~220–300 MB more than MobileNet.
+- All FP32 models are well inside a 30 fps (33 ms) camera budget with 4 threads.
+
+## 10. Limitations
+
+- PlantVillage consists of lab images with uniform backgrounds; near-ceiling accuracy does not imply field performance (Section 8). PlantDoc's test set is small (236 images, 4–12 per class), and crops from the same photograph may appear in both its train and test splits.
 - Three seeds give limited statistical power for differences of ~0.1 percentage points.
 - The HPO budget (20 trials) is small, and median pruning and 5-epoch runs bias the search toward fast-starting configurations.
 - Some paper details are not stated (layer freezing, dropout, LR schedule) and are assumptions in our reconstruction; the paper's code is not public.
+- The QAT implementation was simplified and did not work; INT8 conclusions are for post-training quantization with ONNX Runtime.
+- Latency was measured on one device and runtime (CPU, ONNX Runtime). Mobile NPUs/GPUs or other runtimes (TFLite/XNNPACK) could change absolute numbers and the INT8/FP16 speed results. Energy consumption was not measured.
+- The explanation of MobileViT's better field accuracy (global context from self-attention) is a hypothesis; it was not tested directly (e.g. with Grad-CAM).

@@ -1,0 +1,15 @@
+model,config,acc,agree_with_fp32,size_MB
+mobilenetv3_small_100,static_U8S8 (as before),0.057,0.057,1.8057279586791992
+mobilenetv3_small_100,static_U8S8_reduce_range,0.139,0.139,1.8057279586791992
+mobilenetv3_small_100,static_U8U8,0.039,0.039,1.8152952194213867
+mobilenetv3_small_100,static_S8S8,0.153,0.153,1.80657958984375
+mobilenetv3_small_100,dynamic_S8 (as before),0.096,0.096,1.6442937850952148
+mobilenetv3_small_100,dynamic_S8_reduce_range,0.03,0.03,1.6442937850952148
+mobilenetv3_small_100,dynamic_U8,0.038,0.038,1.644322395324707
+mobilevit_xxs,static_U8S8 (as before),0.107,0.107,1.6599960327148438
+mobilevit_xxs,static_U8S8_reduce_range,0.109,0.109,1.6599769592285156
+mobilevit_xxs,static_U8U8,0.113,0.113,1.6671953201293945
+mobilevit_xxs,static_S8S8,0.109,0.109,1.6615190505981445
+mobilevit_xxs,dynamic_S8 (as before),0.082,0.082,1.2826595306396484
+mobilevit_xxs,dynamic_S8_reduce_range,0.022,0.022,1.2826595306396484
+mobilevit_xxs,dynamic_U8,0.069,0.069,1.2826948165893555
